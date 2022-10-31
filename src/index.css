@@ -30,6 +30,11 @@ body {
   font-size: 3rem;
 }
 
+.basicTextFAQ {
+  font-size: 3rem;
+  text-align: center;
+}
+
 .description{
   margin-left: 2%;
   font-size: 1rem;
@@ -122,6 +127,18 @@ body::-webkit-scrollbar-thumb {
   padding-right: 10%;
 }
 
+.contactMe{
+  color: white;
+  text-align: center;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
+.FAQ{
+  color: white;
+  padding-left: 5%;
+}
+
 .myName{
   margin-left: 2vh;
 }
@@ -157,4 +174,67 @@ body::-webkit-scrollbar-thumb {
 	-moz-animation: bounce 2s infinite;
 	-o-animation: bounce 2s infinite;
   margin-top: 8%;
+}
+
+#my-input {
+  border: 2px solid white;
+  border-radius: 20px;
+  color: white;
+  padding: 5%;
+  width: 30vw;
+  background: none;
+  margin-bottom: 2%;
+}
+
+#my-textarea{
+  border: 2px solid white;
+  border-radius: 20px;
+  color: white;
+  padding: 5%;
+  width: 55vw;
+  margin-left: 0%;
+  background: none;
+  margin-bottom: 2%;
+}
+
+.bringLeft{
+  transform: translateX(-45%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.label{
+  color: white;
+  font-size: 1.5rem;
+  text-align: left;
+  margin-left: 2%;
+  margin-bottom: 2%;
+}
+
+.bringLeftText{
+  transform: translateX(-50%);
+  transition: transform 0.3s ease-in-out;
+}
+
+.plusQuestion{
+  color: white;
+  font-size: 1.5rem;
+  text-align: left;
+  cursor: pointer;
+  background-color: grey;
+  border-radius: 10px;
+  margin-bottom: 1%;
+}
+
+.plusQuestion:hover{
+  color: black;
+  background-color: white;
+}
+
+.question{
+  margin-left: 1%;
+}
+
+.response{
+  margin-left: 1%;
+  font-weight: 200;
 }
