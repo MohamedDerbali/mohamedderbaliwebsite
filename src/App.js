@@ -12,10 +12,17 @@ import MenuIcon from "@mui/icons-material/Menu";
 import RiveAni from "./rivetober_03.riv";
 import { useEffect, useState } from "react";
 import Card from "@mui/material/Card";
-import CardActions from "@mui/material/CardActions";
 import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
 import FormControl from "@mui/material/FormControl";
+import web from "./services/web.svg";
+import scrap from "./services/data-collection.svg";
+import db from "./services/database-system.svg";
+import mobile from "./services/mobile-weather-application.svg";
+import desktop from "./services/desktop-banking.svg";
+import deploy from "./services/server.svg";
+import server from "./services/server-resource-scaling.svg";
+
 function App() {
   const [detectPageScroll, setDetectPageScroll] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
@@ -155,35 +162,205 @@ function App() {
         </h1>
         <Grid
           container
-          spacing={{ xs: 2, md: 3 }}
+          spacing={{ xs: 4, md: 8, sm: 8 }}
           columns={{ xs: 4, sm: 8, md: 12 }}
         >
-          {Array.from(Array(6)).map((_, index) => (
-            <Grid item xs={2} sm={4} md={4} key={index}>
-              <Card sx={{ maxWidth: 345 }}>
-                <CardMedia
-                  component="img"
-                  height="140"
-                  image="/static/images/cards/contemplative-reptile.jpg"
-                  alt="green iguana"
-                />
-                <CardContent>
-                  <Typography gutterBottom variant="h5" component="div">
-                    Lizard
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    Lizards are a widespread group of squamate reptiles, with
-                    over 6,000 species, ranging across all continents except
-                    Antarctica
-                  </Typography>
-                </CardContent>
-                <CardActions>
-                  <Button size="small">Share</Button>
-                  <Button size="small">Learn More</Button>
-                </CardActions>
-              </Card>
-            </Grid>
-          ))}
+          <Grid item xs={2} sm={4} md={4} key={1}>
+            <Card
+            className="MuiCard-root"
+              sx={{
+                maxWidth: 345,
+                padding: "5%",
+                backgroundColor: "rgb(53, 53, 53)",
+                color: "white",
+                boxShadow: "5px 5px rgb(255, 86, 120)",
+              }}
+            >
+              <CardMedia
+                component="img"
+                height="350"
+                image={web}
+                alt="Web developement"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                  <span className="code">Web developement</span>
+                </Typography>
+                <Typography variant="body2">
+                  <p className="code">
+                    Javascript, NodeJs, ReactJs, Php, Laravel, Symfony, Html,
+                    Css, Tailwind Css, SpringBoot, JavaEE, JSF, Angular
+                  </p>
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={2} sm={4} md={4} key={1}>
+            <Card
+              className="MuiCard-root"
+              sx={{
+                maxWidth: 345,
+                padding: "5%",
+                backgroundColor: "rgb(53, 53, 53)",
+                color: "white",
+                boxShadow: "5px 5px rgb(255, 86, 120)",
+              }}
+            >
+              <CardMedia
+                component="img"
+                height="auto"
+                image={scrap}
+                alt="Web developement"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                  <span className="code">Web Scrapping</span>
+                </Typography>
+                <Typography variant="body2">
+                  <p className="code">BeautifulSoup 4, selinium</p>
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={2} sm={4} md={4} key={1}>
+            <Card
+            className="MuiCard-root"
+              sx={{
+                maxWidth: 345,
+                padding: "5%",
+                backgroundColor: "rgb(53, 53, 53)",
+                color: "white",
+                boxShadow: "5px 5px rgb(255, 86, 120)",
+              }}
+            >
+              <CardMedia
+                component="img"
+                height="auto"
+                image={db}
+                alt="Web developement"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                  <span className="code">Databases Managemenet</span>
+                </Typography>
+                <Typography variant="body2">
+                  <p className="code">Mysql, MongoDB, PostgreSQL</p>
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={2} sm={4} md={4} key={1}>
+            <Card
+            className="MuiCard-root"
+              sx={{
+                maxWidth: 345,
+                padding: "5%",
+                backgroundColor: "rgb(53, 53, 53)",
+                color: "white",
+                boxShadow: "5px 5px rgb(255, 86, 120)",
+              }}
+            >
+              <CardMedia
+                component="img"
+                height="auto"
+                image={mobile}
+                alt="Web developement"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                  <span className="code">Mobile developement</span>
+                </Typography>
+                <Typography variant="body2">
+                  <p className="code">
+                    React native, Android, Javascript, Java
+                  </p>
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={2} sm={4} md={4} key={1}>
+            <Card
+            className="MuiCard-root"
+              sx={{
+                maxWidth: 345,
+                padding: "5%",
+                backgroundColor: "rgb(53, 53, 53)",
+                color: "white",
+                boxShadow: "5px 5px rgb(255, 86, 120)",
+              }}
+            >
+              <CardMedia
+                component="img"
+                height="auto"
+                image={desktop}
+                alt="Web developement"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                  <span className="code">Desktop developement</span>
+                </Typography>
+                <Typography variant="body2">
+                  <p className="code">Qt, C++, Java, JavaFx, SDL, C</p>
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={2} sm={4} md={4} key={1}>
+            <Card
+            className="MuiCard-root"
+              sx={{
+                maxWidth: 345,
+                padding: "5%",
+                backgroundColor: "rgb(53, 53, 53)",
+                color: "white",
+                boxShadow: "5px 5px rgb(255, 86, 120)",
+              }}
+            >
+              <CardMedia
+                component="img"
+                height="auto"
+                image={deploy}
+                alt="Web developement"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                  <span className="code">Deployment</span>
+                </Typography>
+                <Typography variant="body2">
+                  <p className="code">
+                    Amazon Web Service, Heroku, Vercel, Netlify
+                  </p>
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
+          <Grid item xs={2} sm={4} md={4} key={1}>
+            <Card
+            className="MuiCard-root"
+              sx={{
+                maxWidth: 345,
+                padding: "5%",
+                backgroundColor: "rgb(53, 53, 53)",
+                color: "white",
+                boxShadow: "5px 5px rgb(255, 86, 120)",
+              }}
+            >
+              <CardMedia
+                component="img"
+                height="auto"
+                image={server}
+                alt="Web developement"
+              />
+              <CardContent>
+                <Typography gutterBottom variant="h5" component="div">
+                  <span className="code">Server ressources Managemenet</span>
+                </Typography>
+                <Typography variant="body2">
+                  <p className="code">Ngnix, Docker, Dns, Https</p>
+                </Typography>
+              </CardContent>
+            </Card>
+          </Grid>
         </Grid>
       </div>
       <div className="contactMe" id="contactMe">

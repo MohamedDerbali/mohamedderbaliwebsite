@@ -139,6 +139,13 @@ body::-webkit-scrollbar-thumb {
   padding-left: 5%;
 }
 
+.MuiCard-root {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
 .myName{
   margin-left: 2vh;
 }
