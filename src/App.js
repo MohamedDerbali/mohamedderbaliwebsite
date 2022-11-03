@@ -22,7 +22,9 @@ import mobile from "./services/mobile-weather-application.svg";
 import desktop from "./services/desktop-banking.svg";
 import deploy from "./services/server.svg";
 import server from "./services/server-resource-scaling.svg";
-
+import { Link } from "react-scroll";
+import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import BusinessCenterIcon from "@mui/icons-material/BusinessCenter";
 function App() {
   const [detectPageScroll, setDetectPageScroll] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
@@ -57,7 +59,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="App" id="home">
       <Box sx={{ flexGrow: 1 }}>
         <AppBar
           position="fixed"
@@ -74,12 +76,49 @@ function App() {
         >
           {openMenu && (
             <div className="navigationMenu">
-              <button className="navigationBtn">Home</button>
-              <button className="navigationBtn">About me</button>
-              <button className="navigationBtn">Services</button>
-              <button className="navigationBtn">Work experience</button>
-              <button className="navigationBtn">Contact me</button>
-              <button className="navigationBtn">FAQ</button>
+              <Link
+                to="home"
+                spy={true}
+                smooth={true}
+                style={{ width: "100%" }}
+              >
+                <button className="navigationBtn">Home</button>
+              </Link>
+              <Link
+                to="aboutMe"
+                spy={true}
+                smooth={true}
+                style={{ width: "100%" }}
+              >
+                <button className="navigationBtn">About me</button>
+              </Link>
+              <Link
+                to="services"
+                spy={true}
+                smooth={true}
+                style={{ width: "100%" }}
+              >
+                <button className="navigationBtn">Services</button>
+              </Link>
+              <Link
+                to="workExperience"
+                spy={true}
+                smooth={true}
+                style={{ width: "100%" }}
+              >
+                <button className="navigationBtn">Work experience</button>
+              </Link>
+              <Link
+                to="contactMe "
+                spy={true}
+                smooth={true}
+                style={{ width: "100%" }}
+              >
+                <button className="navigationBtn">Contact me</button>
+              </Link>
+              <Link to="FAQ" spy={true} smooth={true} style={{ width: "100%" }}>
+                <button className="navigationBtn">FAQ</button>
+              </Link>
             </div>
           )}
           <Toolbar>
@@ -167,7 +206,7 @@ function App() {
         >
           <Grid item xs={2} sm={4} md={4} key={1}>
             <Card
-            className="MuiCard-root"
+              className="MuiCard-root"
               sx={{
                 maxWidth: 345,
                 padding: "5%",
@@ -224,7 +263,7 @@ function App() {
           </Grid>
           <Grid item xs={2} sm={4} md={4} key={1}>
             <Card
-            className="MuiCard-root"
+              className="MuiCard-root"
               sx={{
                 maxWidth: 345,
                 padding: "5%",
@@ -251,7 +290,7 @@ function App() {
           </Grid>
           <Grid item xs={2} sm={4} md={4} key={1}>
             <Card
-            className="MuiCard-root"
+              className="MuiCard-root"
               sx={{
                 maxWidth: 345,
                 padding: "5%",
@@ -280,7 +319,7 @@ function App() {
           </Grid>
           <Grid item xs={2} sm={4} md={4} key={1}>
             <Card
-            className="MuiCard-root"
+              className="MuiCard-root"
               sx={{
                 maxWidth: 345,
                 padding: "5%",
@@ -307,7 +346,7 @@ function App() {
           </Grid>
           <Grid item xs={2} sm={4} md={4} key={1}>
             <Card
-            className="MuiCard-root"
+              className="MuiCard-root"
               sx={{
                 maxWidth: 345,
                 padding: "5%",
@@ -336,7 +375,7 @@ function App() {
           </Grid>
           <Grid item xs={2} sm={4} md={4} key={1}>
             <Card
-            className="MuiCard-root"
+              className="MuiCard-root"
               sx={{
                 maxWidth: 345,
                 padding: "5%",
@@ -362,6 +401,206 @@ function App() {
             </Card>
           </Grid>
         </Grid>
+      </div>
+      <br />
+      <div className="workExperience" id="workExperience">
+        <h1 className="basicText" style={{ marginTop: "5%" }}>
+          Work experience
+        </h1>
+        <div class="row ">
+          <div class="fullWidth eight columns">
+            <ul class="cbp_tmtimeline">
+              <li>
+                <div class="cbp_tmicon">
+                  <BusinessCenterIcon
+                    style={{ fontSize: 80, marginTop: "15%" }}
+                    className="icon"
+                  />
+                </div>
+
+                <div class="cbp_tmlabel wow fadeInRight animated">
+                  <Box style={{ width: "100%" }}
+                    sx={{
+                      display: "flex",
+                      p: 1,
+                    }}
+                  >
+                    <div sx={{ flexGrow: 1 }} style={{marginRight: "20%"}}>
+                      <h3 className="code">Backend engineer</h3>
+                    </div>
+                    <div style={{marginRight: "1%"}}>
+                      <CalendarMonthIcon />
+                    </div>
+                    <div>
+                      <p
+                        className="code"
+                        style={{
+                          marginTop: "-5%",
+                          textAlign: "left",
+                        }}
+                      >
+                        May 2022
+                        <br />
+                        Current
+                      </p>
+                    </div>
+                  </Box>
+                  <h4 className="code">Oney, France</h4>
+                  <p class="projectParagraph code">
+                    - Researching, designing, managing software programs. <br />
+                    - Testing and evaluating new programs. <br />- Modifying
+                    software to fix error, improve its performance. <br />
+                    - Deploying software tools, processes and metrics. <br />
+                    - Directing software programming and documentation
+                    development. <br />
+                    - Writing and implementing code. <br />
+                    - Preparing reports on programming project specifications,
+                    activities, or status. <br />- Consulting with engineering
+                    staff to evaluate software-hardware interfaces and develop
+                    specifications and performance requirements.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div class="cbp_tmicon cbp_tmicon-screen">
+                  <BusinessCenterIcon
+                    style={{ fontSize: 80, marginTop: "15%" }}
+                    className="icon"
+                  />
+                </div>
+                <div class="cbp_tmlabel wow fadeInRight animated">
+                  <Box style={{ width: "100%" }}
+                    sx={{
+                      display: "flex",
+                      p: 1,
+                    }}
+                  >
+                    <div sx={{ flexGrow: 1 }} style={{marginRight: "20%"}}>
+                      <h3 className="code">Full stack javascript
+                    <br /> developer</h3>
+                    </div>
+                    <div style={{marginRight: "1%"}}>
+                      <CalendarMonthIcon />
+                    </div>
+                    <div>
+                      <p
+                        className="code"
+                        style={{
+                          marginTop: "-5%",
+                          textAlign: "left",
+                        }}
+                      >
+                        August 2021
+                        <br />
+                        April 2022
+                      </p>
+                    </div>
+                  </Box>
+                  <h4 className="code">The team, France</h4>
+                  <p class="projectParagraph code">
+                    - Building and developing the server part architecture.{" "}
+                    <br />
+                    - Leading and coaching five javascript developers interns to
+                    complete backend tasks. <br />
+                    - Maintaining the existing user application by fixing bugs
+                    and optimise the existing code. <br />
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div class="cbp_tmicon cbp_tmicon-mail">
+                  <BusinessCenterIcon
+                    style={{ fontSize: 80, marginTop: "15%" }}
+                    className="icon"
+                  />
+                </div>
+                <div class="cbp_tmlabel wow fadeInRight animated">
+                  <Box style={{ width: "100%" }}
+                    sx={{
+                      display: "flex",
+                      p: 1,
+                    }}
+                  >
+                    <div sx={{ flexGrow: 1 }} style={{marginRight: "20%"}}>
+                      <h3 className="code">Full stack javascript
+                    <br /> developer</h3>
+                    </div>
+                    <div style={{marginRight: "1%"}}>
+                      <CalendarMonthIcon />
+                    </div>
+                    <div>
+                      <p
+                        className="code"
+                        style={{
+                          marginTop: "-5%",
+                          textAlign: "left",
+                        }}
+                      >
+                        January 2021
+                        <br/>July 2021
+                      </p>
+                    </div>
+                  </Box>
+                  <h4 className="code">Lyveat, France</h4>
+                  <p class="projectParagraph code">
+                    - Maintain different applications (Restaurant, Client,
+                    Admin, Rider). <br />
+                    - Placing a chat solution using Ably io for realtime
+                    communication. <br />- Implementation of drag and drop to
+                    change elements orders. <br />- Establish a solution to
+                    export restaurant tickets in the mobile application and
+                    print them using the bluetooth printer.
+                  </p>
+                </div>
+              </li>
+              <li>
+                <div class="cbp_tmicon cbp_tmicon-phone">
+                  <BusinessCenterIcon
+                    style={{ fontSize: 80, marginTop: "15%" }}
+                    className="icon"
+                  />
+                </div>
+                <div class="cbp_tmlabel wow fadeInRight animated">
+                  <Box style={{ width: "100%" }}
+                    sx={{
+                      display: "flex",
+                      p: 1,
+                    }}
+                  >
+                    <div sx={{ flexGrow: 1 }} style={{marginRight: "20%"}}>
+                      <h3 className="code">Mobile developer</h3>
+                    </div>
+                    <div style={{marginRight: "1%"}}>
+                      <CalendarMonthIcon />
+                    </div>
+                    <div>
+                      <p
+                        className="code"
+                        style={{
+                          marginTop: "-5%",
+                          textAlign: "left",
+                        }}
+                      >
+                        Feb 2021
+                        <br />Sep 2021
+                      </p>
+                    </div>
+                  </Box>
+                  <h4 className="code">Forbetter, Quebec</h4>
+                  <p class="projectParagraph code">
+                    - Creating a mobile application using react native and nest
+                    js to defend women rights and help employees to find a job
+                    in Quebec, Canada. <br />
+                    - Deploy the backend application on amazon web service,
+                    configure cluster for node js to make performing requests
+                    faster and configure Nginx and Docker to balance the backend
+                    application. <br />
+                  </p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
       <div className="contactMe" id="contactMe">
         <h1 className="basicText">Contact me</h1>
