@@ -58,6 +58,20 @@ body {
   transform-origin: 50% 50% 0px;
 }
 
+@media (max-width: 500px){
+  .btnTopEmail{
+    width: 120%;
+    padding: 2%;
+    margin-right: -15px;
+    font-size: small;
+  }
+  .textLogo{
+    font-size: 12px; 
+    margin-right: 10px;
+    text-align: left;
+  }
+}
+
 .emailBtn:hover {
   opacity: 90%;
 }

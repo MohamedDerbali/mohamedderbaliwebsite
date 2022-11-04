@@ -135,11 +135,11 @@ function App() {
               <MenuIcon />
             </IconButton>
             <Typography component="div" sx={{ flexGrow: 1 }}>
-              <span className="code">{"</> Mohamed Dev"}</span>
+              <span className="code textLogo">{"</> Mohamed Dev"}</span>
             </Typography>
             <Button color="inherit">
               <span
-                className="code emailBtn"
+                className="code emailBtn btnTopEmail"
                 onClick={() => window.open("mailto:mohamed.derbali@esprit.tn")}
               >
                 mohamed.derbali@esprit.tn
