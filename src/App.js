@@ -39,6 +39,13 @@ function App() {
   };
   const defaults = [true, true, true, true, true];
   const [questions, setQuestions] = useState(defaults);
+  const [mailProperties, setMailProperties] = useState({
+    name: "",
+    email: "",
+    message: "",
+    subject: "",
+    phone: "",
+  });
   const changeQuestion = (e, index) => {
     let arr = [...questions];
     arr[index] = !arr[index];
@@ -56,6 +63,25 @@ function App() {
     } else {
       setDetectPageScroll(false);
     }
+  };
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setMailProperties({ ...mailProperties, [name]: value });
+  };
+
+  const sendMailToMohamed = async (e) => {
+    if (
+      mailProperties.name ||
+      mailProperties.email ||
+      mailProperties.message ||
+      mailProperties.subject ||
+      mailProperties.phone
+    ) {
+      window.open(`mailto:mohamed.derbali@esprit.tn?subject=${mailProperties.subject}&body=${mailProperties.message}%0D%0Aphone:${mailProperties.phone}`);
+      return;
+    }
+    alert("you should fill all the fields");
   };
 
   return (
@@ -419,16 +445,17 @@ function App() {
                 </div>
 
                 <div class="cbp_tmlabel wow fadeInRight animated">
-                  <Box style={{ width: "100%" }}
+                  <Box
+                    style={{ width: "100%" }}
                     sx={{
                       display: "flex",
                       p: 1,
                     }}
                   >
-                    <div sx={{ flexGrow: 1 }} style={{marginRight: "20%"}}>
+                    <div sx={{ flexGrow: 1 }} style={{ marginRight: "20%" }}>
                       <h3 className="code">Backend engineer</h3>
                     </div>
-                    <div style={{marginRight: "1%"}}>
+                    <div style={{ marginRight: "1%" }}>
                       <CalendarMonthIcon />
                     </div>
                     <div>
@@ -469,17 +496,20 @@ function App() {
                   />
                 </div>
                 <div class="cbp_tmlabel wow fadeInRight animated">
-                  <Box style={{ width: "100%" }}
+                  <Box
+                    style={{ width: "100%" }}
                     sx={{
                       display: "flex",
                       p: 1,
                     }}
                   >
-                    <div sx={{ flexGrow: 1 }} style={{marginRight: "20%"}}>
-                      <h3 className="code">Full stack javascript
-                    <br /> developer</h3>
+                    <div sx={{ flexGrow: 1 }} style={{ marginRight: "20%" }}>
+                      <h3 className="code">
+                        Full stack javascript
+                        <br /> developer
+                      </h3>
                     </div>
-                    <div style={{marginRight: "1%"}}>
+                    <div style={{ marginRight: "1%" }}>
                       <CalendarMonthIcon />
                     </div>
                     <div>
@@ -515,17 +545,20 @@ function App() {
                   />
                 </div>
                 <div class="cbp_tmlabel wow fadeInRight animated">
-                  <Box style={{ width: "100%" }}
+                  <Box
+                    style={{ width: "100%" }}
                     sx={{
                       display: "flex",
                       p: 1,
                     }}
                   >
-                    <div sx={{ flexGrow: 1 }} style={{marginRight: "20%"}}>
-                      <h3 className="code">Full stack javascript
-                    <br /> developer</h3>
+                    <div sx={{ flexGrow: 1 }} style={{ marginRight: "20%" }}>
+                      <h3 className="code">
+                        Full stack javascript
+                        <br /> developer
+                      </h3>
                     </div>
-                    <div style={{marginRight: "1%"}}>
+                    <div style={{ marginRight: "1%" }}>
                       <CalendarMonthIcon />
                     </div>
                     <div>
@@ -537,7 +570,8 @@ function App() {
                         }}
                       >
                         January 2021
-                        <br/>July 2021
+                        <br />
+                        July 2021
                       </p>
                     </div>
                   </Box>
@@ -561,16 +595,17 @@ function App() {
                   />
                 </div>
                 <div class="cbp_tmlabel wow fadeInRight animated">
-                  <Box style={{ width: "100%" }}
+                  <Box
+                    style={{ width: "100%" }}
                     sx={{
                       display: "flex",
                       p: 1,
                     }}
                   >
-                    <div sx={{ flexGrow: 1 }} style={{marginRight: "20%"}}>
+                    <div sx={{ flexGrow: 1 }} style={{ marginRight: "20%" }}>
                       <h3 className="code">Mobile developer</h3>
                     </div>
-                    <div style={{marginRight: "1%"}}>
+                    <div style={{ marginRight: "1%" }}>
                       <CalendarMonthIcon />
                     </div>
                     <div>
@@ -582,7 +617,8 @@ function App() {
                         }}
                       >
                         Feb 2021
-                        <br />Sep 2021
+                        <br />
+                        Sep 2021
                       </p>
                     </div>
                   </Box>
@@ -615,7 +651,10 @@ function App() {
               <input
                 id="my-input"
                 className="code"
+                name="name"
+                onChange={handleChange}
                 placeholder="write your name here.."
+                value={mailProperties.name}
               />
             </FormControl>
           </Grid>
@@ -625,7 +664,10 @@ function App() {
               <input
                 id="my-input"
                 className="code"
+                name="email"
+                onChange={handleChange}
                 placeholder="write your email here.."
+                value={mailProperties.email}
               />
             </FormControl>
           </Grid>
@@ -635,7 +677,10 @@ function App() {
               <input
                 id="my-input"
                 className="code"
+                name="phone"
+                onChange={handleChange}
                 placeholder="example: (415) 200 - 8613"
+                value={mailProperties.phone}
               />
             </FormControl>
           </Grid>
@@ -645,7 +690,10 @@ function App() {
               <input
                 id="my-input"
                 className="code"
+                name="subject"
+                onChange={handleChange}
                 placeholder="write your subject here.."
+                value={mailProperties.subject}
               />
             </FormControl>
           </Grid>
@@ -655,13 +703,21 @@ function App() {
               <textarea
                 id="my-textarea"
                 className="code"
+                name="message"
+                onChange={handleChange}
                 placeholder="write your message here.."
+                value={mailProperties.message}
               />
             </FormControl>
           </Grid>
           <Grid item xs={12}>
             <Button color="inherit">
-              <span className="code emailBtn">Send message</span>
+              <span
+                className="code emailBtn"
+                onClick={(e) => sendMailToMohamed(e)}
+              >
+                Send message
+              </span>
             </Button>
           </Grid>
         </Grid>
