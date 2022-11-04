@@ -153,6 +153,13 @@ body::-webkit-scrollbar-thumb {
   padding-right: 10%;
 }
 
+.techs{
+  color: white;
+  text-align: center;
+  padding-left: 10%;
+  padding-right: 10%;
+}
+
 .workExperience {
   color: white;
   text-align: center;
